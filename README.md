@@ -1,0 +1,2 @@
+# thingamajig
+Naming helper
