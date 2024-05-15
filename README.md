@@ -11,9 +11,10 @@ It's worth noting that there is a lot of "new" and "unknown" in this project. So
 
 ### CDK
 
-Hard-coded to account and region, in `bin/thingamajig.ts`
-
-### AWS
+- Hard-coded to account and region, in `bin/thingamajig.ts`
+- Each component is a Stack and they are declared in the lib folder.
+- The named instances of these stacks are defined within `bin/thingamajig.ts`.
+- These can be individually deployed by name.
 
 #### Tagging
 
