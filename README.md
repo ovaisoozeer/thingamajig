@@ -15,4 +15,4 @@ It's worth noting that there is a lot of "new" and "unknown" in this project. So
 
 #### Tagging
 
-Using a simple tagging strategy. Valid key-pairs can be found in `infrastructure-tags.json`.
+Uses tags defined in https://github.com/ovaisoozeer/aws-config/blob/main/tagging-strategy.json

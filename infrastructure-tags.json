@@ -1,5 +1,0 @@
-{
-  "environment": ["dev", "test"],
-  "capability": ["iac"],
-  "container": []
-}
