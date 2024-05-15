@@ -9,7 +9,9 @@ It's worth noting that there is a lot of "new" and "unknown" in this project. So
 
 ## Infrastructure
 
-### Pulumi
+### CDK
+
+Hard-coded to account and region, in `bin/thingamajig.ts`
 
 ### AWS
 
