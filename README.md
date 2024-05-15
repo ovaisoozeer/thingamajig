@@ -12,9 +12,8 @@ It's worth noting that there is a lot of "new" and "unknown" in this project. So
 ### CDK
 
 - Hard-coded to account and region, in `bin/thingamajig.ts`
-- Each component is a Stack and they are declared in the lib folder.
+- Each IDU is a Stack within the app and is declared in the lib folder. These can have sets of stacks or constructs within them.
 - The named instances of these stacks are defined within `bin/thingamajig.ts`.
-- These can be individually deployed by name.
 
 #### Tagging
 
