@@ -1,13 +1,15 @@
 import * as cdk from "aws-cdk-lib";
 import { Construct } from "constructs";
 import * as cognito from "aws-cdk-lib/aws-cognito";
+import { ResourceName } from "../naming-factory";
 
-export class CustomerIdentityStack extends cdk.Stack {
+export class CustomerIdentityService extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    new cognito.UserPool(this, id, {
-      userPoolName: id,
+    const name: string = ResourceName(id, "UserPool");
+    const userPool = new cognito.UserPool(this, name, {
+      userPoolName: name,
       accountRecovery: cognito.AccountRecovery.NONE,
       deletionProtection: false,
       customAttributes: {
