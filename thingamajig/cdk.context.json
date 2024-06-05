@@ -42,5 +42,9 @@
         ]
       }
     ]
+  },
+  "security-group:account=654654391715:region=eu-west-2:securityGroupName=dev-database-access:vpcId=vpc-04d96d6a8ca692320": {
+    "securityGroupId": "sg-0223d8a9b717707dc",
+    "allowAllOutbound": false
   }
 }
