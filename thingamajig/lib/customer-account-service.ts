@@ -32,6 +32,7 @@ export class CustomerAccountService extends cdk.Stack {
 
     const database = new DatabaseInstance(this, "CustomerAccounts", {
       engine: DatabaseInstanceEngine.MYSQL,
+      databaseName: "ThingamajigCustomerAccounts",
       credentials: Credentials.fromGeneratedSecret("thingamajigAdmin"),
       vpc: devVpc,
       subnetGroup: dbSubnetGroup,
