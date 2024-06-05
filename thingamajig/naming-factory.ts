@@ -3,7 +3,7 @@ import { ApplicationValues } from "./magic-strings";
 // For independently deployable containers
 // Appears in CF as a logical name for a stack
 export function StackName(containerName: string): string {
-  return `${ApplicationValues.applicationName}-${containerName}`;
+  return `${ApplicationValues.APPLICATION_NAME}-${containerName}`;
 }
 
 // For components within a unit of deployment

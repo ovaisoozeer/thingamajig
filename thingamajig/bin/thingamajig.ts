@@ -4,7 +4,7 @@ import * as cdk from "aws-cdk-lib";
 import { CustomerIdentityService as CustomerIdentityService } from "../lib/customer-identity-service";
 import { ApplicationValues } from "../magic-strings";
 import { StackName } from "../naming-factory";
-// import { CustomerAccountStack } from "../lib/customer-account-stack";
+import { CustomerAccountService } from "../lib/customer-account-service";
 
 const app = new cdk.App();
 const CDK_DEFAULT_ACCOUNT = "654654391715";
@@ -16,7 +16,7 @@ const dev = "env-dev";
 new CustomerIdentityService(app, StackName("CustomerIdentityService"), {
   env: { account: CDK_DEFAULT_ACCOUNT, region: CDK_DEFAULT_REGION },
   tags: {
-    application: ApplicationValues.applicationName,
+    application: ApplicationValues.APPLICATION_NAME,
     "creation date": "2024-05-16 16:00:00",
     criticality: "criticality-required",
     "data scope": "data-privileged",
@@ -25,14 +25,14 @@ new CustomerIdentityService(app, StackName("CustomerIdentityService"), {
   },
 });
 
-// new CustomerAccountStack(app, "CustomerAccountStack", {
-//   env: { account: CDK_DEFAULT_ACCOUNT, region: CDK_DEFAULT_REGION },
-//   tags: {
-//     application: applicationName,
-//     "creation date": "2024-05-21 12:00:00",
-//     criticality: "criticality-required",
-//     "data scope": "data-privileged",
-//     environment: dev,
-//     "expiry date": theYear3000,
-//   },
-// });
+new CustomerAccountService(app, StackName("CustomerAccountService"), {
+  env: { account: CDK_DEFAULT_ACCOUNT, region: CDK_DEFAULT_REGION },
+  tags: {
+    application: ApplicationValues.APPLICATION_NAME,
+    "creation date": "2024-06-04 16:00:00",
+    criticality: "criticality-required",
+    "data scope": "data-privileged",
+    environment: dev,
+    "expiry date": theYear3000,
+  },
+});
