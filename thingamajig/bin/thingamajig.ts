@@ -2,21 +2,22 @@
 import "source-map-support/register";
 import * as cdk from "aws-cdk-lib";
 import { CustomerIdentityService as CustomerIdentityService } from "../lib/customer-identity-service";
-import { ApplicationValues } from "../magic-strings";
+import { AccountValues } from "../magic-strings";
 import { StackName } from "../naming-factory";
 import { CustomerAccountService } from "../lib/customer-account-service";
 
 const app = new cdk.App();
-const CDK_DEFAULT_ACCOUNT = "654654391715";
-const CDK_DEFAULT_REGION = "eu-west-2";
 
 const theYear3000 = "3000-01-01 00:00:00";
 const dev = "env-dev";
 
 new CustomerIdentityService(app, StackName("CustomerIdentityService"), {
-  env: { account: CDK_DEFAULT_ACCOUNT, region: CDK_DEFAULT_REGION },
+  env: {
+    account: AccountValues.ACCOUNT_NUMBER,
+    region: AccountValues.PREFERRED_REGION,
+  },
   tags: {
-    application: ApplicationValues.APPLICATION_NAME,
+    application: AccountValues.APPLICATION_NAME,
     "creation date": "2024-05-16 16:00:00",
     criticality: "criticality-required",
     "data scope": "data-privileged",
@@ -26,9 +27,12 @@ new CustomerIdentityService(app, StackName("CustomerIdentityService"), {
 });
 
 new CustomerAccountService(app, StackName("CustomerAccountService"), {
-  env: { account: CDK_DEFAULT_ACCOUNT, region: CDK_DEFAULT_REGION },
+  env: {
+    account: AccountValues.ACCOUNT_NUMBER,
+    region: AccountValues.PREFERRED_REGION,
+  },
   tags: {
-    application: ApplicationValues.APPLICATION_NAME,
+    application: AccountValues.APPLICATION_NAME,
     "creation date": "2024-06-04 16:00:00",
     criticality: "criticality-required",
     "data scope": "data-privileged",
