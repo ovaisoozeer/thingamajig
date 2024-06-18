@@ -9,8 +9,9 @@ It's worth noting that there is a lot of "new" and "unknown" in this project. So
 
 ## Infrastructure
 
-### CDK
+### CDK (DEPRECATED)
 
+- NB: Moved away from this, as it was just slowing me down too much. Probably should have done this earlier. Now doing all via console.
 - Hard-coded to account and region, in `bin/thingamajig.ts`
 - Each IDU is a Stack within the app and is declared in the lib folder. These can have sets of stacks or constructs within them.
 - The named instances of these stacks are defined within `bin/thingamajig.ts`.
